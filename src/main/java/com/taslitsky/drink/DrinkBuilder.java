@@ -1,19 +1,21 @@
 package com.taslitsky.drink;
+import java.util.List;
 
 public class DrinkBuilder {
-  private Drink drink = new Drink();
+    private final Drink drink = new Drink();
 
-  public DrinkBuilder drink(DrinkItem drinkItem) {
-    drink.setDrinkItem(drinkItem);
-    return this;
-  }
+    public DrinkBuilder drink(DrinkItem drinkItem) {
+        drink.setDrinkItem(drinkItem);
+        return this;
+    }
 
-  public DrinkBuilder additionalItem(DrinkAdditionalItem item) {
-    drink.getDrinkAdditionalItems().add(item);
-    return this;
-  }
+    public DrinkBuilder additionalItem(List<DrinkAdditionalItem> items) {
+        drink.setDrinkAdditionalItems(items);
+        return this;
+    }
 
-  public Drink build() {
-    return drink;
-  }
+    public Drink build() {
+        return drink;
+    }
+
 }
