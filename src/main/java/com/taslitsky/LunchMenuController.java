@@ -7,7 +7,6 @@ import com.taslitsky.lunch.CuisineItem;
 import com.taslitsky.lunch.DessertItem;
 import com.taslitsky.lunch.Lunch;
 import com.taslitsky.lunch.LunchBuilder;
-
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 

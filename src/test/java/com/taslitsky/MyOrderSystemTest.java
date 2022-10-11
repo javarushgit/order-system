@@ -1,5 +1,4 @@
 package com.taslitsky;
-
 import com.taslitsky.cuisine.MexicanCourse;
 import com.taslitsky.drink.Drink;
 import com.taslitsky.drink.DrinkAdditionalItem;
