@@ -1,16 +1,15 @@
-package com.taslitsky.drink;
+package com.taslitsky.cuisine;
 
 import com.taslitsky.item.PaidItem;
 
-public enum DrinkItem implements PaidItem {
-    PEPSI(5F),
-    COLA(4F),
-    WINE(8F),
-    BEER(5F);
+public enum MexicanCourse implements PaidItem, CourseItem {
+    TACOS(5F),
+    TOSTADA(12F),
+    BARBACOA(16F);
 
     private final Float price;
 
-    DrinkItem(Float price) {
+    MexicanCourse(Float price) {
         this.price = price;
     }
 
