@@ -1,6 +1,5 @@
 package com.taslitsky.cuisine;
 
-
 public enum ItalianCourse implements CourseItem{
     FISH(10F),
     PASTA(12F),

@@ -1,4 +1,5 @@
 package com.taslitsky;
+
 import java.util.Scanner;
 
 public class Controller {

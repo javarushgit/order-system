@@ -1,4 +1,5 @@
 package com.taslitsky.lunch;
+
 import com.taslitsky.cuisine.CourseItem;
 
 public class LunchBuilder {

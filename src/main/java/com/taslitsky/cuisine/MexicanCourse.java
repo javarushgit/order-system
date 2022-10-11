@@ -2,7 +2,6 @@ package com.taslitsky.cuisine;
 
 import com.taslitsky.item.PaidItem;
 
-
 public enum MexicanCourse implements PaidItem, CourseItem {
     TACOS(5F),
     TOSTADA(12F),

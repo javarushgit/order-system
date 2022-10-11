@@ -1,4 +1,5 @@
 package com.taslitsky.drink;
+
 import com.taslitsky.item.PaidItem;
 
 public enum DrinkItem implements PaidItem {

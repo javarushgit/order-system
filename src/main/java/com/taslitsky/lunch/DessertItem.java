@@ -1,4 +1,5 @@
 package com.taslitsky.lunch;
+
 import com.taslitsky.item.PaidItem;
 
 public enum DessertItem implements PaidItem {

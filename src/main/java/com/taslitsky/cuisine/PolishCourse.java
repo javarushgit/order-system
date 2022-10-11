@@ -1,4 +1,5 @@
 package com.taslitsky.cuisine;
+
 import com.taslitsky.item.PaidItem;
 
 public enum PolishCourse implements PaidItem, CourseItem {
