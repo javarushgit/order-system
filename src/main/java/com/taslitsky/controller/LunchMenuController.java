@@ -1,4 +1,4 @@
-package com.taslitsky;
+package com.taslitsky.controller;
 
 import com.taslitsky.cuisine.ItalianCourse;
 import com.taslitsky.cuisine.MexicanCourse;
@@ -15,9 +15,9 @@ public class LunchMenuController {
     private static final String CHOICE = "Make your choice:";
     private static final String ANSI_RESET = "\u001B[0m";
     private static final String ANSI_RED = "\u001B[31m";
-    private final LunchBuilder lunchBuilder = new LunchBuilder();
 
     public Lunch getLunch(Scanner scanner) {
+        LunchBuilder lunchBuilder = new LunchBuilder();
         int input = -1;
         boolean isExit = false;
         do {
@@ -38,24 +38,24 @@ public class LunchMenuController {
         switch (input) {
             case 1 -> {
                 lunchBuilder.cuisine(CuisineItem.ITALIAN);
-                getCourse(scanner, CuisineItem.ITALIAN);
-                getDessert(scanner);
+                getCourse(scanner, CuisineItem.ITALIAN, lunchBuilder);
+                getDessert(scanner, lunchBuilder);
             }
             case 2 -> {
                 lunchBuilder.cuisine(CuisineItem.MEXICAN);
-                getCourse(scanner, CuisineItem.MEXICAN);
-                getDessert(scanner);
+                getCourse(scanner, CuisineItem.MEXICAN, lunchBuilder);
+                getDessert(scanner, lunchBuilder);
             }
             case 3 -> {
                 lunchBuilder.cuisine(CuisineItem.POLISH);
-                getCourse(scanner, CuisineItem.POLISH);
-                getDessert(scanner);
+                getCourse(scanner, CuisineItem.POLISH, lunchBuilder);
+                getDessert(scanner, lunchBuilder);
             }
         }
         return lunchBuilder.build();
     }
 
-    private void getCourse(Scanner scanner, CuisineItem cuisineItem) {
+    private void getCourse(Scanner scanner, CuisineItem cuisineItem, LunchBuilder lunchBuilder) {
         int input = -1;
         boolean isExit = false;
         do {
@@ -89,10 +89,10 @@ public class LunchMenuController {
                 scanner.nextLine();
             }
         } while (!isExit);
-        getCourseItem(cuisineItem, input);
+        getCourseItem(cuisineItem, input, lunchBuilder);
     }
 
-    private void getCourseItem(CuisineItem cuisineItem, int input) {
+    private void getCourseItem(CuisineItem cuisineItem, int input, LunchBuilder lunchBuilder) {
         switch (cuisineItem) {
             case ITALIAN -> {
                 switch (input) {
@@ -118,7 +118,7 @@ public class LunchMenuController {
         }
     }
 
-    private void getDessert(Scanner scanner) {
+    private void getDessert(Scanner scanner, LunchBuilder lunchBuilder) {
         int input = -1;
         boolean isExit = false;
         do {

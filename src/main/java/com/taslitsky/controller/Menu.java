@@ -1,8 +1,12 @@
-package com.taslitsky;
+package com.taslitsky.controller;
 
+import com.taslitsky.drink.Drink;
 import com.taslitsky.drink.DrinkItem;
+import com.taslitsky.json.JsonWriter;
 import com.taslitsky.lunch.CuisineItem;
 import com.taslitsky.lunch.DessertItem;
+import com.taslitsky.lunch.Lunch;
+import com.taslitsky.order.OrderBuilder;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;
@@ -19,6 +23,7 @@ public class Menu {
             new LunchMenuController();
     private final DrinkMenuController drinkMenuController =
             new DrinkMenuController();
+    private final OrderBuilder orderBuilder = new OrderBuilder();
 
     public void welcomeMenu() {
         String menu = GREEN_BACKGROUND
@@ -75,11 +80,13 @@ public class Menu {
                         Do you want lunch or just drink?
                         1 - Order lunch
                         2 - Order drink
-                        3 - Show menu
+                        3 - Show my order
+                        4 - Place my order
+                        5 - Show menu
                         0 - Exit
                         Make your choice:""");
                 input = scanner.nextInt();
-                if (input >= 0 && input <= 3) {
+                if (input >= 0 && input <= 5) {
                     isExit = true;
                 } else {
                     System.out.println(ANSI_RED + "!!!No such menu item.Try again!!!" + ANSI_RESET);
@@ -100,9 +107,24 @@ public class Menu {
                 isExit = true;
                 scanner.close();
             }
-            case 1 -> System.out.println(lunchMenuController.getLunch(scanner));
-            case 2 -> System.out.println(drinkMenuController.getDrink(scanner));
-            case 3 -> welcomeMenu();
+            case 1 -> {
+                Lunch lunch;
+                lunch = lunchMenuController.getLunch(scanner);
+                System.out.println(lunch);
+                orderBuilder.lunch(lunch);
+            }
+            case 2 -> {
+                Drink drink;
+                drink = drinkMenuController.getDrink(scanner);
+                System.out.println(drink);
+                orderBuilder.drink(drink);
+            }
+            case 3 -> System.out.println(orderBuilder.build());
+            case 4 -> {
+                JsonWriter jsonWriter = new JsonWriter();
+                jsonWriter.createJson(orderBuilder.build());
+            }
+            case 5 -> welcomeMenu();
         }
         return isExit;
     }

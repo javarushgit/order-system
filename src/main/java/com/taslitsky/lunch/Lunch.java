@@ -33,11 +33,10 @@ public class Lunch {
 
     @Override
     public String toString() {
-        return "\nYou ordered : "
-                + "\nFor lunch: \n" + getCuisineItem().getName()
+        return "Lunch: \n" + getCuisineItem().getName()
                 + " " + getCourseItem().getName()
-                + "-> price: " + getCourseItem().getPrice() + " usd"
-                + "\nFor desert: \n" + getDessertItem().getName()
-                + "-> price: " + getDessertItem().getPrice() + " usd\n";
+                + "------ price: " + getCourseItem().getPrice() + " usd"
+                + "\nDesert: \n" + getDessertItem().getName()
+                + "------ price: " + getDessertItem().getPrice() + " usd\n";
     }
 }

@@ -1,4 +1,4 @@
-package com.taslitsky;
+package com.taslitsky.controller;
 
 import com.taslitsky.drink.Drink;
 import com.taslitsky.drink.DrinkAdditionalItem;
@@ -11,9 +11,9 @@ public class DrinkMenuController {
     private static final String CHOICE = "Make your choice:";
     private static final String ANSI_RESET = "\u001B[0m";
     private static final String ANSI_RED = "\u001B[31m";
-    private final DrinkBuilder drinkBuilder = new DrinkBuilder();
 
     public Drink getDrink(Scanner scanner) {
+        DrinkBuilder drinkBuilder = new DrinkBuilder();
         int input = -1;
         boolean isExit = false;
         do {
@@ -40,25 +40,25 @@ public class DrinkMenuController {
         switch (input) {
             case 1 -> {
                 drinkBuilder.drink(DrinkItem.PEPSI);
-                getDrinkAdditionalItem(DrinkItem.PEPSI, scanner);
+                getDrinkAdditionalItem(DrinkItem.PEPSI, scanner, drinkBuilder);
             }
             case 2 -> {
                 drinkBuilder.drink(DrinkItem.COLA);
-                getDrinkAdditionalItem(DrinkItem.COLA, scanner);
+                getDrinkAdditionalItem(DrinkItem.COLA, scanner, drinkBuilder);
             }
             case 3 -> {
                 drinkBuilder.drink(DrinkItem.WINE);
-                getDrinkAdditionalItem(DrinkItem.WINE, scanner);
+                getDrinkAdditionalItem(DrinkItem.WINE, scanner, drinkBuilder);
             }
             case 4 -> {
                 drinkBuilder.drink(DrinkItem.BEER);
-                getDrinkAdditionalItem(DrinkItem.BEER, scanner);
+                getDrinkAdditionalItem(DrinkItem.BEER, scanner, drinkBuilder);
             }
         }
         return drinkBuilder.build();
     }
 
-    public void getDrinkAdditionalItem(DrinkItem drinkItem, Scanner scanner) {
+    public void getDrinkAdditionalItem(DrinkItem drinkItem, Scanner scanner, DrinkBuilder drinkBuilder) {
         int input = -1;
         boolean isExit = false;
         do {

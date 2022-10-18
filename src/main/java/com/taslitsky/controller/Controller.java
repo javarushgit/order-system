@@ -1,4 +1,4 @@
-package com.taslitsky;
+package com.taslitsky.controller;
 
 import java.util.Scanner;
 

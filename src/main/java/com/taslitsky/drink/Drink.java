@@ -26,12 +26,11 @@ public class Drink {
 
     @Override
     public String toString() {
-        return "\nYou ordered : " + "\n" + getDrinkItem().getName()
-                + "-> price: " + getDrinkItem().getPrice() + " usd"
+        return "Drink: " + "\n" + getDrinkItem().getName()
+                + "------ price: " + getDrinkItem().getPrice() + " usd"
                 + "\nwith: " + getDrinkAdditionalItems()
                 .stream()
                 .map(Enum::toString)
-                .collect(Collectors.joining(", ")) + "\n";
+                .collect(Collectors.joining(" and ")) + "\n";
     }
-
 }
