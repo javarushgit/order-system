@@ -1,1 +1,1 @@
-{"lunchOrder":[{"cuisineItem":"ITALIAN","courseItem":"PASTA","dessertItem":"ICE_CREAM"}],"drinkOrder":[{"drinkItem":"COLA","drinkAdditionalItems":["LEMON","ICE_CUBES"]},{"drinkItem":"BEER","drinkAdditionalItems":["ICE_CUBES"]}],"sum":31.0}
+{"lunchOrder":[{"cuisineItem":"MEXICAN","courseItem":"TACOS","dessertItem":"PANCAKE"}],"drinkOrder":[{"drinkItem":"WINE","drinkAdditionalItems":["ICE_CUBES"]},{"drinkItem":"BEER","drinkAdditionalItems":["LEMON"]}],"sum":33.0}
