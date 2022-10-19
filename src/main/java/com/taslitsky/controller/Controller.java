@@ -10,7 +10,7 @@ public class Controller {
         boolean isExit = false;
         menu.welcomeMenu();
         while (!isExit) {
-            isExit = menu.getUserInput(scanner);
+            isExit = (menu.getUserInput(scanner));
         }
     }
 }

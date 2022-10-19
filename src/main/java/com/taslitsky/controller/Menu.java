@@ -18,7 +18,6 @@ public class Menu {
     public static final String ANSI_RESET = "\u001B[0m";
     private static final String ANSI_RED = "\u001B[31m";
     public static final String GREEN_BACKGROUND = "\033[42m";
-    private int input;
     private final LunchMenuController lunchMenuController =
             new LunchMenuController();
     private final DrinkMenuController drinkMenuController =
@@ -70,8 +69,8 @@ public class Menu {
         System.out.println(menu);
     }
 
-    public void getMenu(Scanner scanner) {
-        input = -1;
+    public int getMenu(Scanner scanner) {
+        int input = 0;
         boolean isExit = false;
         do {
             try {
@@ -97,15 +96,15 @@ public class Menu {
                 scanner.nextLine();
             }
         } while (!isExit);
+        return input;
     }
 
     public boolean getUserInput(Scanner scanner) {
-        boolean isExit = false;
-        getMenu(scanner);
+        int input = getMenu(scanner);
         switch (input) {
             case 0 -> {
-                isExit = true;
                 scanner.close();
+                return true;
             }
             case 1 -> {
                 Lunch lunch;
@@ -126,6 +125,7 @@ public class Menu {
             }
             case 5 -> welcomeMenu();
         }
-        return isExit;
+        return false;
     }
+
 }
