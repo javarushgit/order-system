@@ -1,0 +1,1 @@
+{"lunchOrder":[{"cuisineItem":"MEXICAN","courseItem":"TACOS","dessertItem":"PANCAKE"}],"drinkOrder":[{"drinkItem":"WINE","drinkAdditionalItems":["ICE_CUBES"]},{"drinkItem":"BEER","drinkAdditionalItems":["LEMON"]}],"sum":33.0}
